@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %} {% static 'all/css/style.css' as style %}
+{% if p == 1 %}
+<script > alert("Account Is Successfully Created ");</script>
+
+
+{% endif %}
+<head>
+    <title> AGSPS_MS</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="keywords" content="AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS,AGSPS_MS, AGSPS_MS, " />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--// Meta tag Keywords -->
+
+    <script src=" {%  static 'all/js/form.js'   %}"></script>
+    <!-- css files -->
+
+    <link rel="stylesheet" href="{%  static 'all/css/bootstrap.css'   %}">
+    <!-- Bootstrap-Core-CSS -->
+
+    <link rel="stylesheet" href=" {%  static 'all/css/style.css'   %}" type="text/css" media="all" />
+    <!-- Style-CSS -->
+
+    <link rel="stylesheet" href="{%  static 'all/css/font-awesome.css'   %}">
+    <!-- Font-Awesome-Icons-CSS -->
+
+    <link rel="stylesheet" href="{%  static 'all/css/swipebox.css'   %}">
+    <link rel="stylesheet" href=" {%  static 'all/css/jquery-ui.css'   %}" />
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+<body>
+    <!-- banner -->
+    <div class="main_section_agile" id="home">
+        <div class="agileits_w3layouts_banner_nav">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <h1><a class="navbar-brand" href="index.html"><i class="fa fa-leanpub" aria-hidden="true"></i> AGSPS_MS</a>
+                    </h1>
+
+                </div>
+                <ul class="agile_forms">
+                    <li><a class="active" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in"
+                                                                                              aria-hidden="true"></i>
+                    Sign In</a></li>
+                    <li><a href="#sign"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up</a></li>
+                </ul>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <nav class="link-effect-2" id="link-effect-2">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html" class="effect-3">Home</a></li>
+                            <li><a href="#about" class="effect-3 scroll">About Us</a></li>
+                            <li><a href="#services" class="effect-3 scroll">Services</a></li>
+                            <li><a href="#team" class="effect-3 scroll">Our StafF</a></li>
+                            <li><a href="#gallery" class="effect-3 scroll">Gallery</a></li>
+                            <li><a href="#mail" class="effect-3 scroll">Mail Us</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </nav>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- banner -->
+    <div class="about-bottom">
+        <div class="col-md-6 w3l_about_bottom_left">
+            <div class="video-grid-single-page-agileits">
+
+               <img src="{% static 'all/images/baner.jpg'%}" alt="" class="img-responsive" />
+            </div>
+            <div class="w3l_about_bottom_left_video">
+                <h4 class="watch"> </h4>
+            </div>
+        </div>
+        <div id="sign" class="col-md-6 w3l_about_bottom_right one">
+            <div class="abt-w3l">
+                <div class="header-w3l">
+                    <h2>Admission Form</h2>
+                    <h4>Enter the Following Form</h4>
+                    <form id="app-cover" action="/create/" method="POST" class="mod2">
+
+                         {% csrf_token %}
+                        <div class="col-md-6 col-xs-6 w3l-left-mk">
+                            <ul>
+                                <li id="nametxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-user-circle-o" aria-hidden="true"></i><input onkeyup="testname(this,'nametxt')" placeholder="Name of Applicant : " id="name" name="name" type="text" required=""></li>
+
+                                <li id="fnametxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-user-circle-o" aria-hidden="true"></i><input onkeyup="testname(this,'fnametxt')" placeholder="Father Name of Applicant :" id="fname" name="fname" type="text" required=""></li>
+
+                                <li id="lnametxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-user-circle-o" aria-hidden="true"></i><input onkeyup="testname(this,'lnametxt')" placeholder="Last Name of Applicant : " id="lname" name="lname" type="text" required=""></li>
+
+                                <li id="numtxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-phone" aria-hidden="true"></i><input onkeyup="testnum(this,'numtxt')" placeholder="Phone Number of Applicant : " id="num" name="std_phone_num" type="text" required=""></li>
+
+                                <li id="passtxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-lock " aria-hidden="true"></i><input onkeyup="testpass(this,'passtxt')" placeholder="Password of Applicant : " id="pass" name="pass" type="text" required=""></li>
+
+                                <li class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-user-circle-o" aria-hidden="true"></i><input placeholder="Age of Applicant :" name="age" type="number" required=""></li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-6 w3l-right-mk ">
+                            <ul>
+                                <li class="text agileits-main sel">Grade of Applicant:
+
+                                    <div>
+                                        <select name="grade" class="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+
+                                    </div>
+                                </li>
+
+                                <li class="text agileits-main sel">Kebele of Applicant:
+                                    <div>
+                                        <select name="kebele" class="mdb-selt md-form md-outline colorful-select dropdown-primary">
+                                        <option value="1">01</option>
+                                        <option value="2">02</option>
+                                        <option value="3">03</option>
+                                        <option value="4">04</option>
+                                    </select>
+
+                                    </div>
+                                </li>
+
+                                <li class="text agileits-main sel">Gender of Applicant:
+                                    <div class="select-outline">
+                                        <select name="gender" class="mdb-select md-form md-outline colorful-select dropdown-primary">
+                                        <option value="m">Male</option>
+                                        <option value="f">Female</option>
+
+                                    </select>
+
+                                    </div>
+                                </li>
+
+
+                                <li id="pnametxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-user-circle-o" aria-hidden="true"></i><input onkeyup="testname(this,'pnametxt')" placeholder="Parent Name of Applicant : " id="pname" name="parent_name" type="text" required=""></li>
+                                <li id="pnumtxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-phone" aria-hidden="true"></i><input onkeyup="testnum(this,'pnumtxt')" placeholder="Phone Num of Applicant :" id="pnum" name="parent_phone_num" type="text" required=""></li>
+                                <li id="ppasstxt" class="text"></li>
+                                <li class="agileits-main"><i style=" color:rgb(113, 252, 0)" class="fa fa-lock" aria-hidden="true"></i><input onkeyup="testpass(this,'ppasstxt')" placeholder="Password For Parent of Applicant :" id="ppas" name="parent_password" type="text" required=""></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="agile-submit">
+                            <input disabled id="ahi" type="submit" value="Submit">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //banner -->
+    <!-- Modal1 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="signin-form profile">
+                        <h3 class="agileinfo_sign">Sign In</h3>
+                        <div class="login-form">
+                            <form action="/login/" method="POST"  >
+
+                                {% csrf_token %}
+                                <input type="text" name="email" placeholder="E-mail" required="">
+                                <input type="password" name="password" placeholder="Password" required="">
+                                <div class="tp">
+                                    <input type="submit" value="Sign In">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login-social-grids">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                        </div>
+                        <p><a href="#sign"> Don't have an account?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Modal1 -->
+
+    <div class="clearfix"></div>
+    <!-- //Modal2 -->
+    <!-- about -->
+    <div class="about-top" id="about">
+        <div class="container">
+            <h3 class="w3l-title">About Us</h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+            </div>
+            <div class="col-md-7 wthree-services-bottom-grids">
+                <div class="wthree-services-left">
+
+                    <img src=" {%  static 'all/images/c1.jpg'   %}" alt="">
+                </div>
+                <div class="wthree-services-right">
+
+                    <img src="  {%  static 'all/images/c2.jpg'   %}" alt="">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-5 wthree-about-grids">
+                <h4>Welcome to Our SCHooL</h4>
+                <a href="#" class="trend-w3l" data-toggle="modal" data-target="#myModal"><span>Read More</span></a>
+                <a href="#mail" class="trend-w3l scroll"><span>Get In Touch</span></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal about-modal w3-agileits fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+
+                    <img src=" {%  static 'all/images/std1.jpg'   %}" alt="">
+                    <p> Asossa General secondaty preparatory school </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //modal -->
+    <!-- //about -->
+    <!--stats-->
+    <div class="stats" id="stats">
+        <div class="container">
+            <div class="stats-info">
+                <div class="col-md-3 col-xs-3 stats-grid slideanim">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='1' data-max='120' data-delay='.5' data-increment="1">120
+                    </div>
+
+                    <h4 class="stats-info">StudentS</h4>
+                </div>
+                <div class="col-md-3 col-xs-3 stats-grid slideanim">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='1' data-max='120' data-delay='.5' data-increment="1">120
+                    </div>
+
+                    <h4 class="stats-info">TeacherS</h4>
+                </div>
+                <div class="col-md-3 col-xs-3 stats-grid slideanim">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='-50' data-max='36' data-delay='.5' data-increment="1">36
+                    </div>
+
+                    <h4 class="stats-info">No Of Rooms</h4>
+                </div>
+                <div class="col-md-3 col-xs-3 stats-grid slideanim">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='-50' data-max='120' data-delay='.5' data-increment="1">120
+                    </div>
+
+                    <h4 class="stats-info">TEACHER</h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--//stats-->
+    <!-- services -->
+    <div class="services" id="services">
+        <div class="container">
+            <h3 class="w3l-title">Our School Differ From Others By</h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+            </div>
+            <div class="services-w3ls-row">
+                <div class="col-xs-4 services-grid agileits-w3layouts">
+                    <span class="fa fa-soccer-ball-o grid-w3l-ser" aria-hidden="true"></span>
+                    <h6>01</h6>
+                    <h5>Sport Facility</h5>
+                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien. Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                </div>
+                <div class="col-xs-4 services-grid agileits-w3layouts">
+                    <span class="fa fa-user-o grid-w3l-ser" aria-hidden="true"></span>
+
+                    <h6>02</h6>
+                    <h5>Skilled Lecturers</h5>
+                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien. Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                </div>
+                <div class="col-xs-4 services-grid agileits-w3layouts">
+                    <span class="fa fa-book grid-w3l-ser" aria-hidden="true"></span>
+                    <h6>03</h6>
+                    <h5>Book Library & Store</h5>
+                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien. Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //services -->
+    <!-- Gallery -->
+    <section class="portfolio-w3ls" id="gallery">
+        <h3 class="w3l-title">Our Gallery</h3>
+        <div class="w3layouts_header">
+            <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+
+            <a href="{% static 'all/images/std2.jpg'   %} " class="swipebox"><img src="{% static 'all/images/std2.jpg'   %} " class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std3.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std3.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std1.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std1.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std3.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std3.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std2.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std2.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std8.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std8.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std5.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std5.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std9.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std9.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std10.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std10.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std10.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std10.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std6.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std6.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std8.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std8.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std5.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std5.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std2.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std2.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std3.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std3.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-xs-3 gallery-grid gallery1">
+            <a href="{%  static 'all/images/std1.jpg'   %}" class="swipebox"><img src="{%  static 'all/images/std1.jpg'   %}" class="img-responsive" alt="/">
+                <div class="textbox">
+                    <h4>A/G/S/P School</h4>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="clearfix"></div>
+    </section>
+    <!-- //gallery -->
+    <!-- team -->
+    <div class="team-w3l" id="team">
+        <div class="container">
+            <h3 class="w3l-title">Our Staff</h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+            </div>
+            <div class="team-w3l-grid">
+                <div class="col-md-4 col-xs-4 about-poleft t1">
+                    {% static 'all/images/t1.jpg' %}
+                    <div class="about_img"><img src="{%  static 'all/images/t1.jpg'   %}" alt="">
+                        <h5>Yohanes Lule (Jhon)</h5>
+                        <div class="about_opa">
+                            <p>Director</p>
+                            <ul class="fb_icons2 text-center">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest-p" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 about-poleft t2">
+                    <div class="about_img"><img src="{%  static 'all/images/t2.jpg'   %}" alt="">
+                        <h5>Seifu Gebeyehu</h5>
+                        <div class="about_opa">
+                            <p></p>
+                            <ul class="fb_icons2 text-center">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest-p" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 about-poleft t3">
+                    <div class="about_img"><img src="{%  static 'all/images/t3.jpg'   %}" alt="">
+                        <h5>Kylie</h5>
+                        <div class="about_opa">
+                            <p>Lecturers</p>
+                            <ul class="fb_icons2 text-center">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest-p" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="team-w3l-grid grid-2-team">
+                <div class="col-md-4 col-xs-4 about-poleft t1">
+                    <div class="about_img"><img src="{%  static 'all/images/t4.jpg'   %}" alt="">
+                        <h5>Cameron</h5>
+                        <div class="about_opa">
+                            <p>Professor</p>
+                            <ul class="fb_icons2 text-center">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest-p" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 about-poleft t2">
+                    <div class="about_img"><img src="{%  static 'all/images/t5.jpg'   %}" alt="">
+                        <h5>Darponia</h5>
+                        <div class="about_opa">
+                            <p>Senior Lecturers</p>
+                            <ul class="fb_icons2 text-center">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest-p" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 about-poleft t3">
+                    <div class="about_img"><img src="{%  static 'all/images/t6.jpg'   %}" alt="">
+                        <h5>Austin</h5>
+                        <div class="about_opa">
+                            <p>Lecturers</p>
+                            <ul class="fb_icons2 text-center">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest-p" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //team -->
+    <!-- contact -->
+    <div id="mail" class="contact">
+        <div class="container">
+            <h3 class="w3l-title">Mail Us</h3>
+            <div class="w3layouts_header">
+                <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+            </div>
+            <div class="agile_banner_bottom_grids">
+                <div class="col-md-4 col-xs-4 w3_agile_contact_grid">
+                    <div class="agile_contact_grid_left">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <div class="agile_contact_grid_right agilew3_contact">
+                        <h4>Address</h4>
+                        <p>STADIUM</p>
+                        <p>B/G/R/S Asossa City</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 w3_agile_contact_grid">
+                    <div class="agile_contact_grid_left agileits_w3layouts_left">
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                    </div>
+                    <div class="agile_contact_grid_right agileits_w3layouts_right">
+                        <h4>Phone</h4>
+                        <p>+(251) 945320109<span>+(251) 945320109</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4 w3_agile_contact_grid">
+                    <div class="agile_contact_grid_left agileits_w3layouts_left1">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="agile_contact_grid_right agileits_w3layouts_right1">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@example.com">info@example1.com</a>
+                            <span><a href="mailto:info@example.com">info@example2.com</a></span></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="w3l-form">
+                <h3 class="w3l-title">Get In Touch</h3>
+                <div class="contact-grid1">
+                    <div class="contact-top1">
+                        <form action="#" method="post">
+                            {%  csrf_token %}
+                            <div class="col-md-6 col-xs-6 wthree_contact_left_grid">
+                                <label>Name*</label>
+                                <input type="text" name="Name" placeholder="Name" required="">
+                                <label>E-mail*</label>
+                                <input type="email" name="E-mail" placeholder="E-mail" required="">
+                            </div>
+                            <div class="col-md-6 col-xs-6 wthree_contact_left_grid">
+                                <label>Phone Number*</label>
+                                <input type="text" name="number" placeholder="Phone Number" required="">
+                                <label>Subject*</label>
+                                <input type="text" name="subject" placeholder="Subject" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Message*</label>
+                                <textarea placeholder name="Message" required=""></textarea>
+                            </div>
+                            <input type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+                `
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="wthree_footer_grid_left">
+                <div class="col-md-4 col-xs-3 wthree_footer_grid_left1">
+                    <h4>About Us</h4>
+                    <p>Donec viverra nunc eu neque porta, quis laoreet nisl gravida. Proin gravida, diam ut consectetur porttitor.
+                    </p>
+                </div>
+                <div class="col-md-4 col-xs-3 wthree_footer_grid_left1">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#about" class="scroll">About
+                        Us</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#services" class="scroll">Services</a>
+                        </li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#team" class="scroll">Our
+                        Staff</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#gallery" class="scroll">Gallery</a>
+                        </li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#mail" class="scroll">Mail
+                        Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-xs-3 wthree_footer_grid_left1 wthree_footer_grid_right1">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">info@asossa_highs_chool.com</a>
+                        </li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>+(251) 94532 0109</li>
+                        <li><i class="fa fa-fax" aria-hidden="true"></i>+251 94532 0109</li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="w3layouts_copy_right">
+        <div class="container">
+            <p>© 2020 Scholarly. All rights reserved | Design by <a href="#"> D5MAH </a></p>
+        </div>
+    </div>
+    <!-- //footer -->
+
+    <!-- js-scripts -->
+    <!-- js-files -->
+
+    <script type="text/javascript" src="{%  static 'all/js/jquery-2.1.4.min.js'   %}"></script>
+    <script type="text/javascript" src=" {%  static 'all/js/bootstrap.js'   %}"></script>
+    <!-- Necessary-JavaScript-File-For-Bootstrap -->
+    <!-- //js-files -->
+    <!-- Baneer-js -->
+
+
+    <!-- smooth scrolling -->
+
+    <script src=" {%  static 'all/js/SmoothScroll.min.js'   %}"></script>
+    <script src="   {%  static 'all/js/all.js'   %}"></script>
+    <!-- //smooth scrolling -->
+    <!-- stats -->
+
+    <script type="text/javascript" src=" {%  static 'all/js/numscroller-1.0.js'   %}"></script>
+    <!-- //stats -->
+    <!-- moving-top scrolling -->
+
+    <script type="text/javascript" src="{%  static 'all/js/move-top.js'   %}"></script>
+    <script type="text/javascript" src=" {%  static 'all/js/easing.js'   %}"></script>
+
+
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //moving-top scrolling -->
+    <!-- gallery popup -->
+
+    <script src="{%  static 'all/js/jquery.swipebox.min.js'   %}"></script>
+
+    <!-- //gallery popup -->
+    <!--/script-->
+
+    <script src="    {%  static 'all/js/simplePlayer.js'   %}"></script>
+
+    <!-- //Baneer-js -->
+    <!-- Calendar -->
+
+    <script src=" {%  static 'all/js/jquery-ui.js'   %}"></script>
+
+    <!-- //Calendar -->
+
+    <!-- //js-scripts -->
+</body>
+
+</html>

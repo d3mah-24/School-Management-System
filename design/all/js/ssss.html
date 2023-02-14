@@ -1,0 +1,29 @@
+<html>
+
+<body>
+    <input type="text" id="txt" onkeyup="manage(this)" />
+    <input type="submit" id="btSubmit" disabled />
+</body>
+<script>
+    function manage(txt) {
+        var bt = document.getElementById('btSubmit');
+        if (txt.value != '') {
+            bt.disabled = false;
+        } else {
+            bt.disabled = true;
+        }
+    }
+
+    // 	Using ES6 feature.
+    // 	let manage = (txt) => { 
+    //     	let bt = document.getElementById('btSubmit');
+    //         if (txt.value != '') {
+    //             bt.disabled = false;
+    //         }
+    //         else {
+    //             bt.disabled = true;
+    //         }
+    //     }
+</script>
+
+</html>

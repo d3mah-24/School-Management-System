@@ -1,0 +1,26 @@
+
+textarea {
+	resize: none !important;
+	overflow: auto !important;
+	outline: none;
+	box-shadow: none !important;
+	border-color: #008DE7 !important;
+}
+textarea:hover {
+		resize: none !important;
+		overflow: auto !important;
+		outline: none;
+		box-shadow: none !important;
+		border-color:  #008DE7 !important;
+	}
+
+textarea.notes {
+	width: 99%;
+	height: 15em;
+	line-height: 31px;
+	background-image: -webkit-linear-gradient(left, white 0, transparent 0), -webkit-linear-gradient(right, white 0, transparent 0), -webkit-linear-gradient(white 30px, red 30px, red 31px, white 31px);
+	background-repeat: repeat-y;
+	background-size: 100% 100%, 100% 100%, 100% 31px;
+	background-attachment: local;
+}
+
